@@ -4,4 +4,194 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dashboard"/>
+    tools:context=".dashboard">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="217dp"
+        android:layout_height="51dp"
+        android:text="Hi, Good Day!"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="34dp"
+        android:layout_height="39dp"
+        android:contentDescription="notification"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022"
+        app:srcCompat="@drawable/icon_notification" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="415dp"
+        android:layout_height="556dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.592">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ImageButton 1 -->
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="358dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="Image Button 1"
+                android:padding="10sp"
+                android:src="@drawable/breakfastimport" />
+
+            <!-- ImageButton 2 -->
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="Image Button 2"
+                android:src="@drawable/lunchimagebutton" />
+
+            <!-- ImageButton 3 -->
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="Image Button 3"
+                android:padding="10sp"
+                android:src="@drawable/dinnerimagebutton" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chef's Recommendation"
+                android:textSize="30sp"
+                android:translationX="20px" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Image Button 1 -->
+                    <ImageButton
+                        android:id="@+id/chickenburger"
+                        android:layout_width="136dp"
+                        android:layout_height="135dp"
+                        android:layout_margin="8dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/cheesylover"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <!-- Image Button 2 -->
+                    <ImageButton
+                        android:id="@+id/beefburger1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/chickenburger__1_"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <!-- Image Button 3 -->
+
+                    <ImageButton
+                        android:id="@+id/beefburger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/beefdeluxe"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <ImageButton
+                        android:id="@+id/salmon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/salmonburger__1_"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <!-- Add more ImageButtons as needed -->
+
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="423dp"
+        android:layout_height="66dp"
+        android:background="#CFE256"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/rectangle_16__1_" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:translationY="20px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978"
+        app:srcCompat="@drawable/_icon__home_" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:translationY="20px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978"
+        app:srcCompat="@drawable/_icon__booking_" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:translationY="20px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.978"
+        app:srcCompat="@drawable/_icon__profile_circle_" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
