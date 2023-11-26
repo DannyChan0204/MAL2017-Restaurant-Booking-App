@@ -1,6 +1,8 @@
 package com.example.restaurantbookingapp;// BookingActivity.java
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +24,8 @@ public class Booking extends AppCompatActivity {
         // Get the data from the intent
         String meal = getIntent().getStringExtra("meal");
         int imageResource = getIntent().getIntExtra("imageResource", 0);
+        Button submitButton;
+        ImageView btnback;
 
         // Update the TextView and ImageView
         selectedText.setText(meal);
@@ -30,6 +34,7 @@ public class Booking extends AppCompatActivity {
         ImageButton indoorbutton = findViewById(R.id.indoorbutton);
         ImageButton seasidebutton = findViewById(R.id.seasidebutton);
         ImageButton gardensidebutton = findViewById(R.id.gardensidebutton);
+        Button ReserveButton = findViewById(R.id.ReserveButton);
 
         indoorbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +42,7 @@ public class Booking extends AppCompatActivity {
                 // Change the image in the ImageView to the desired resource
                 selectedText2.setText("Indoor");
                 selectedImage2.setImageResource(R.drawable.indoorupdate);
+                ReserveButton.setVisibility(View.VISIBLE);
             }
         });
 
@@ -46,6 +52,7 @@ public class Booking extends AppCompatActivity {
                 // Change the image in the ImageView to the desired resource
                 selectedText2.setText("Seaside");
                 selectedImage2.setImageResource(R.drawable.seasideupdate);
+                ReserveButton.setVisibility(View.VISIBLE);
             }
         });
 
@@ -55,7 +62,25 @@ public class Booking extends AppCompatActivity {
                 // Change the image in the ImageView to the desired resource
                 selectedText2.setText("Gardenside");
                 selectedImage2.setImageResource(R.drawable.gardensideupdate);
+                ReserveButton.setVisibility(View.VISIBLE);
             }
     });
+
+        btnback = (ImageView) findViewById(R.id.BookingBack);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {finish();
+            }
+        });
+
+        ReserveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navigate to a new screen (Replace NewScreenActivity.class with your desired activity)
+                Intent intent = new Intent(Booking.this, Date_Layout.class);
+                startActivity(intent);
+            }
+        });
+
 }
 }
