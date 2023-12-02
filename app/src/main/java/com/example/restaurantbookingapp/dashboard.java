@@ -1,4 +1,6 @@
-package com.example.restaurantbookingapp;// DashboardActivity.java
+// dashboard.java
+package com.example.restaurantbookingapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +17,7 @@ public class dashboard extends AppCompatActivity {
         ImageButton bkButton = findViewById(R.id.bkbutton);
         ImageButton lunchButton = findViewById(R.id.lunchbutton);
         ImageButton dinnerButton = findViewById(R.id.dinnerbutton);
+        ImageButton profileButton = findViewById(R.id.imageButton);
 
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
             @Override
@@ -38,8 +41,26 @@ public class dashboard extends AppCompatActivity {
             }
         };
 
+        View.OnClickListener profileButtonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch the Profile activity
+                Intent intent = new Intent(dashboard.this, Profile.class);
+                startActivity(intent);
+            }
+        };
+
         bkButton.setOnClickListener(buttonClickListener);
         lunchButton.setOnClickListener(buttonClickListener);
         dinnerButton.setOnClickListener(buttonClickListener);
+
+        // Set OnClickListener for the profileButton
+        profileButton.setOnClickListener(profileButtonClickListener);
+    }
+
+    // Add the method to handle profile button click
+    public void navigateToProfile(View view) {
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
     }
 }

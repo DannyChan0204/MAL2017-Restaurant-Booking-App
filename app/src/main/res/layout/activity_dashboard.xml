@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".dashboard">
 
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CFE256"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.989"
+        app:srcCompat="@drawable/_icon__profile_circle_"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="217dp"
@@ -135,6 +149,13 @@
                         android:src="@drawable/salmonburger__1_"
                         tools:ignore="SpeakableTextPresentCheck" />
 
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#CFE256"
+                        app:srcCompat="@drawable/_icon__profile_circle_" />
+
                     <!-- Add more ImageButtons as needed -->
 
                 </LinearLayout>
@@ -155,43 +176,49 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rectangle_16__1_" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:translationY="20px"
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CFE256"
+        android:translationY="-10px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978"
-        app:srcCompat="@drawable/_icon__home_" />
+        app:layout_constraintVertical_bias="0.994"
+        app:srcCompat="@drawable/_icon__booking_"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:translationY="20px"
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CFE256"
+        android:translationY="-10px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978"
-        app:srcCompat="@drawable/_icon__booking_" />
+        app:layout_constraintVertical_bias="0.994"
+        app:srcCompat="@drawable/_icon__home_"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:translationY="20px"
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CFE256"
+        android:translationY="-20px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978"
-        app:srcCompat="@drawable/_icon__profile_circle_" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/_icon__profile_circle_"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
