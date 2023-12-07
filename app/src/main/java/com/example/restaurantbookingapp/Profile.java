@@ -37,6 +37,7 @@ public class Profile extends AppCompatActivity {
         profileImageButton = findViewById(R.id.profileImageButton);
     }
 
+
     public void onProfileImageClick(View view) {
         // Open the image gallery when the ImageButton is clicked
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
