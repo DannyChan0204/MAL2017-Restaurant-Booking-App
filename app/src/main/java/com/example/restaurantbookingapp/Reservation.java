@@ -1,5 +1,6 @@
 package com.example.restaurantbookingapp;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Reservation extends AppCompatActivity {
 
+    private ImageButton imageButton30;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,14 @@ public class Reservation extends AppCompatActivity {
             }
         });
 
+        imageButton30 = findViewById(R.id.imageButton30);
+        imageButton30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                back();
+            }
+        });
+
         View.OnClickListener EditClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,6 +49,11 @@ public class Reservation extends AppCompatActivity {
         };
         Edit.setOnClickListener(EditClickListener);
 
+    }
+
+    private void back() {
+        Intent intent = new Intent(this, dashboard.class);
+        startActivity(intent);
     }
 
     private void showCancelBookingDialog() {

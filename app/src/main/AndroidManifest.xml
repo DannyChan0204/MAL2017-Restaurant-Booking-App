@@ -15,6 +15,9 @@
         android:theme="@style/Theme.RestaurantBookingApp"
         tools:targetApi="31">
         <activity
+            android:name=".rating_review_dialog"
+            android:exported="false" />
+        <activity
             android:name=".Favourites"
             android:exported="false" />
         <activity
