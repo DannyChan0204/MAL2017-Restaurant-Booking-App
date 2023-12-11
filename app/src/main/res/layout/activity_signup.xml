@@ -54,7 +54,7 @@
         android:id="@+id/SignupEmail"
         android:layout_width="196dp"
         android:layout_height="44dp"
-        android:text="Email"
+        android:text="Username"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

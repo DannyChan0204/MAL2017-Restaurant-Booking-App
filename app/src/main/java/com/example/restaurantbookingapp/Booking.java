@@ -1,4 +1,5 @@
-package com.example.restaurantbookingapp;// BookingActivity.java
+package com.example.restaurantbookingapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -64,23 +65,25 @@ public class Booking extends AppCompatActivity {
                 selectedImage2.setImageResource(R.drawable.gardensideupdate);
                 ReserveButton.setVisibility(View.VISIBLE);
             }
-    });
+        });
 
-        btnback = (ImageView) findViewById(R.id.BookingBack);
+        btnback = findViewById(R.id.BookingBack);
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {finish();
+            public void onClick(View v) {
+                finish();
             }
         });
 
         ReserveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Navigate to a new screen (Replace NewScreenActivity.class with your desired activity)
+                // Navigate to a new screen (Replace Date_Layout.class with your desired activity)
                 Intent intent = new Intent(Booking.this, Date_Layout.class);
+                intent.putExtra("meal", getIntent().getStringExtra("meal"));
+                intent.putExtra("location", selectedText2.getText().toString());
                 startActivity(intent);
             }
         });
-
-}
+    }
 }

@@ -4,7 +4,6 @@ package com.example.restaurantbookingapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,7 +20,6 @@ public class dashboard extends AppCompatActivity {
         ImageButton profileButton = findViewById(R.id.imageButton);
         ImageButton ReservationButton = findViewById(R.id.imageButton8);
 
-
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -29,20 +27,24 @@ public class dashboard extends AppCompatActivity {
                 Intent intent = new Intent(dashboard.this, Booking.class);
 
                 int buttonId = view.getId();
+                String selectedMeal = "";
+
                 if (buttonId == R.id.bkbutton) {
-                    intent.putExtra("meal", "Breakfast");
+                    selectedMeal = "Breakfast";
                     intent.putExtra("imageResource", R.drawable.breakfastbookingcolumn);
                 } else if (buttonId == R.id.lunchbutton) {
-                    intent.putExtra("meal", "Lunch");
+                    selectedMeal = "Lunch";
                     intent.putExtra("imageResource", R.drawable.lunchbookingcolumn);
                 } else if (buttonId == R.id.dinnerbutton) {
-                    intent.putExtra("meal", "Dinner");
+                    selectedMeal = "Dinner";
                     intent.putExtra("imageResource", R.drawable.dinnerbookingcolumn);
                 }
 
+                intent.putExtra("meal", selectedMeal);
                 startActivity(intent);
             }
         };
+
 
         View.OnClickListener profileButtonClickListener = new View.OnClickListener() {
             @Override
@@ -56,7 +58,7 @@ public class dashboard extends AppCompatActivity {
         View.OnClickListener ReservationClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Launch the Profile activity
+                // Launch the reservation activity
                 Intent intent = new Intent(dashboard.this, Reservation.class);
                 startActivity(intent);
             }
