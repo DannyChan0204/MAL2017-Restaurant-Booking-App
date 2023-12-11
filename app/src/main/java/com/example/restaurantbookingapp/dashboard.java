@@ -20,6 +20,11 @@ public class dashboard extends AppCompatActivity {
         ImageButton profileButton = findViewById(R.id.imageButton);
         ImageButton ReservationButton = findViewById(R.id.imageButton8);
 
+        String selectedDate = getIntent().getStringExtra("SELECTED_DATE");
+        String selectedMeal = getIntent().getStringExtra("meal");
+        int tableSize = getIntent().getIntExtra("TABLE_SIZE", 0);
+        String selectedLocation = getIntent().getStringExtra("location");
+
         View.OnClickListener buttonClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +65,11 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View view) {
                 // Launch the reservation activity
                 Intent intent = new Intent(dashboard.this, Reservation.class);
+                intent.putExtra("customerName", "Danny");
+                intent.putExtra("meal", selectedMeal);
+                intent.putExtra("location", selectedLocation);
+                intent.putExtra("tableSize", tableSize);
+                intent.putExtra("selectedDate", selectedDate);
                 startActivity(intent);
             }
         };

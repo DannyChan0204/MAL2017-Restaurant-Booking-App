@@ -124,7 +124,6 @@
         android:id="@+id/textView10"
         android:layout_width="106dp"
         android:layout_height="17dp"
-        android:text="Date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
@@ -136,7 +135,6 @@
         android:id="@+id/textView9"
         android:layout_width="106dp"
         android:layout_height="17dp"
-        android:text="Reservation "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
@@ -148,7 +146,6 @@
         android:id="@+id/textView22"
         android:layout_width="106dp"
         android:layout_height="17dp"
-        android:text="Booking ID: "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
@@ -157,16 +154,16 @@
         app:layout_constraintVertical_bias="0.13" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView25"
         android:layout_width="106dp"
         android:layout_height="17dp"
-        android:text="Seaside"
+        android:text="Booking ID:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.619" />
 
     <TextView
         android:id="@+id/textView7"
@@ -178,19 +175,7 @@
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="106dp"
-        android:layout_height="17dp"
-        android:text="Booking ID:"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintVertical_bias="0.642" />
 
     <TextView
         android:id="@+id/textView23"
@@ -202,19 +187,7 @@
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="106dp"
-        android:layout_height="17dp"
-        android:text="Indoor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintVertical_bias="0.666" />
 
     <ImageButton
         android:id="@+id/imageButton30"
@@ -227,7 +200,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/_icon__arrow_back_outline_" />
+        app:srcCompat="@drawable/_icon__arrow_back_outline_"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

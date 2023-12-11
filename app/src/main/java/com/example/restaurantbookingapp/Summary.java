@@ -1,16 +1,20 @@
-// Summary.java
 package com.example.restaurantbookingapp;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -58,6 +62,9 @@ public class Summary extends AppCompatActivity {
         // Display the selected location in textViewLocation
         textView21.setText("Location: " + selectedLocation);
 
+        // Save data to SharedPreferences
+        saveDataToSharedPreferences(selectedDate, selectedMeal, selectedLocation, tableSize);
+
         // Initialize the button
         Button button3 = findViewById(R.id.button3);
 
@@ -103,9 +110,12 @@ public class Summary extends AppCompatActivity {
             int responseCode = urlConnection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 showToast("Reservation successful");
-                Intent intent = new Intent(Summary.this, dashboard.class);
+
+                // Launch the Reservation activity with the corresponding data
+                Intent intent = new Intent(Summary.this, Reservation.class);
+                intent.putExtra("SELECTED_DATE", date);  // Pass the selected date to Reservation activity
                 startActivity(intent);
-                finish();
+                finish();  // Optional: finish the current activity
             } else {
                 showToast("Reservation failed. Response code: " + responseCode);
             }
@@ -116,9 +126,21 @@ public class Summary extends AppCompatActivity {
         }
     }
 
+    private void saveDataToSharedPreferences(String selectedDate, String selectedMeal, String selectedLocation, int tableSize) {
+        // Use SharedPreferences to save data
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("selectedDate", selectedDate);
+        editor.putString("selectedMeal", selectedMeal);
+        editor.putString("selectedLocation", selectedLocation);
+        editor.putInt("tableSize", tableSize);
+
+        editor.apply();
+    }
+
     private void showToast(String message) {
         // Display a toast message
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
-
 }

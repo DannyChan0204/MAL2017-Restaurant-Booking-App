@@ -1,18 +1,30 @@
 package com.example.restaurantbookingapp;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 public class Reservation extends AppCompatActivity {
 
     private ImageButton imageButton30;
+    private TextView textView22;
+    private TextView textView9;
+    private TextView textView10;
+    private TextView cancelTextView;
+    private TextView Edit;
+    private TextView textView25;
+    private TextView textView7;
+    private TextView textView23;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -20,15 +32,15 @@ public class Reservation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
-        TextView cancelTextView = findViewById(R.id.textView13);
-        TextView Edit = findViewById(R.id.textView14);
-        cancelTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Show the cancel booking confirmation dialog
-                showCancelBookingDialog();
-            }
-        });
+        // Initialize TextViews
+        textView22 = findViewById(R.id.textView22);
+        textView9 = findViewById(R.id.textView9);
+        textView10 = findViewById(R.id.textView10);
+        cancelTextView = findViewById(R.id.textView13);
+        Edit = findViewById(R.id.textView14);
+        textView25 = findViewById(R.id.textView25);
+        textView7 = findViewById(R.id.textView7);
+        textView23 = findViewById(R.id.textView23);
 
         imageButton30 = findViewById(R.id.imageButton30);
         imageButton30.setOnClickListener(new View.OnClickListener() {
@@ -38,60 +50,57 @@ public class Reservation extends AppCompatActivity {
             }
         });
 
-        View.OnClickListener EditClickListener = new View.OnClickListener() {
+        // Set click listener for textView13
+        cancelTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Launch the Profile activity
-                Intent intent = new Intent(Reservation.this, Date_Layout.class);
-                startActivity(intent);
+                showCancelConfirmationDialog();
             }
+        });
 
-        };
-        Edit.setOnClickListener(EditClickListener);
+        // Retrieve data from SharedPreferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+        String selectedMeal = preferences.getString("selectedMeal", "");
+        String selectedLocation = preferences.getString("selectedLocation", "");
+        int tableSize = preferences.getInt("tableSize", 0);
+
+        // Display data in TextViews
+        textView22.setText("Meal: " + selectedMeal);
+        textView9.setText("Table Size: " + tableSize);
+        textView10.setText("Location: " + selectedLocation);
+
+        // Check if values for textView22, textView9, and textView10 are null
+        if (TextUtils.isEmpty(selectedMeal) && tableSize == 0 && TextUtils.isEmpty(selectedLocation)) {
+            // Hide cancelTextView and Edit
+            cancelTextView.setVisibility(View.GONE);
+            Edit.setVisibility(View.GONE);
+        }
     }
 
     private void back() {
-        Intent intent = new Intent(this, dashboard.class);
-        startActivity(intent);
+        finish(); // Finish the current activity and go back to the previous one
     }
 
-    private void showCancelBookingDialog() {
-        // Create a custom dialog
-        Dialog cancelDialog = new Dialog(this);
-        cancelDialog.setContentView(R.layout.cancelbookingdialog);
-
-        // Initialize dialog views
-        TextView dialogTitle = cancelDialog.findViewById(R.id.dialogTitle);
-        TextView dialogMessage = cancelDialog.findViewById(R.id.dialogMessage);
-        Button btnConfirmCancel = cancelDialog.findViewById(R.id.btnConfirmCancel);
-        Button btnCancel = cancelDialog.findViewById(R.id.btnCancel);
-
-        // Customize dialog content
-        dialogTitle.setText("Cancel Booking");
-        dialogMessage.setText("Are you sure you want to cancel this booking?");
-
-        // Set click listeners for buttons
-        btnConfirmCancel.setOnClickListener(new View.OnClickListener() {
+    private void showCancelConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cancel Reservation");
+        builder.setMessage("Are you sure you want to cancel this reservation?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Handle confirmed cancel action
-                // You can implement the cancel logic here
-                // For example, show a toast message or perform the cancellation
-                cancelDialog.dismiss();
+            public void onClick(DialogInterface dialog, int which) {
+                // Move values to new TextViews
+                textView25.setText(textView22.getText());
+                textView7.setText(textView9.getText());
+                textView23.setText(textView10.getText());
+
+                // Clear values in original TextViews
+                textView22.setText("");
+                textView9.setText("");
+                textView10.setText("");
             }
         });
-
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle cancellation of cancel action
-                cancelDialog.dismiss();
-            }
-        });
-
-        // Show the dialog
-        cancelDialog.show();
+        builder.setNegativeButton("No", null);
+        builder.show();
     }
-
 }
