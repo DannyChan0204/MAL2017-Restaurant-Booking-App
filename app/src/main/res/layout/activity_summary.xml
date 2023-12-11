@@ -123,7 +123,7 @@
         android:id="@+id/button3"
         android:layout_width="107dp"
         android:layout_height="47dp"
-        android:text="Submit"
+        android:text="Confirm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
